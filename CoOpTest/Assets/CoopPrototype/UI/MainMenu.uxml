@@ -1,0 +1,94 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:Style src="MainMenu.uss" />
+    <ui:VisualElement name="root" class="shell" picking-mode="Ignore">
+        <ui:VisualElement name="menuShell" class="shell">
+            <ui:VisualElement class="masthead">
+                <ui:Label text="BEAN CREW  /  CO-OP" class="brand" />
+                <ui:Label text="GOOD COMPANY. BAD IDEAS." class="edition" />
+            </ui:VisualElement>
+            <ui:VisualElement class="content">
+                <ui:VisualElement name="home" class="page panel">
+                    <ui:Label text="CLOCK IN TOGETHER" class="eyebrow" />
+                    <ui:Label text="Small crew.&#10;Big trouble." class="title" />
+                    <ui:Label text="Bring your friends. Pick your misfit. There is probably work to do." class="description" />
+                    <ui:Button name="startButton" text="Start playing  →" class="primary" />
+                    <ui:Button name="customizeButton" text="Choose your character" />
+                    <ui:Button name="settingsButton" text="Settings" />
+                    <ui:Button name="exitButton" text="Exit game" class="quiet" />
+                </ui:VisualElement>
+                <ui:VisualElement name="connect" class="page panel hidden">
+                    <ui:Label text="GET THE GANG TOGETHER" class="eyebrow" />
+                    <ui:Label text="Host or join" class="heading" />
+                    <ui:TextField name="playerName" label="YOUR NAME" max-length="20" />
+                    <ui:DropdownField name="transportMode" label="CONNECTION" />
+                    <ui:TextField name="address" label="HOST ADDRESS" />
+                    <ui:IntegerField name="port" label="PORT" />
+                    <ui:IntegerField name="capacity" label="PARTY SIZE (2–4)" />
+                    <ui:Label name="connectHint" text="For two editors, use 127.0.0.1 on both. LAN friends use the host computer's IP." class="description" />
+                    <ui:VisualElement class="row"><ui:Button name="hostButton" text="Host party" class="primary" /><ui:Button name="joinButton" text="Connect" /></ui:VisualElement>
+                    <ui:Button name="connectBack" text="← Back" class="quiet" />
+                </ui:VisualElement>
+                <ui:VisualElement name="customize" class="page panel hidden">
+                    <ui:Label name="characterNumber" text="CREW MEMBER 01 / 04" class="eyebrow" />
+                    <ui:Label text="Meet your misfit" class="heading" />
+                    <ui:Label name="characterName" text="Bolt" class="character-name" />
+                    <ui:Label text="Same questionable skills. A different face for the job. Your choice follows you into the game." class="description" />
+                    <ui:VisualElement class="row"><ui:Button name="previousCharacter" text="← Previous" /><ui:Button name="nextCharacter" text="Next →" class="primary" /></ui:VisualElement>
+                    <ui:Label text="Changing character in a party resets your ready status." class="description" />
+                    <ui:Button name="customizeBack" text="Looks good" class="quiet" />
+                </ui:VisualElement>
+                <ui:VisualElement name="settings" class="page panel hidden">
+                    <ui:Label text="MAKE YOURSELF COMFORTABLE" class="eyebrow" />
+                    <ui:Label text="Settings" class="heading" />
+                    <ui:ScrollView class="settings-scroll">
+                    <ui:Slider name="volume" label="MASTER VOLUME" low-value="0" high-value="1" />
+                    <ui:Slider name="sensitivity" label="MOUSE SENSITIVITY" low-value="0.02" high-value="0.4" />
+                    <ui:Toggle name="fullscreen" label="FULLSCREEN (GAME BUILDS)" />
+                    <ui:Label text="VOICE &amp; PROXIMITY" class="eyebrow voice-section" />
+                    <ui:Toggle name="voiceEnabled" label="ENABLE VOICE CHAT" />
+                    <ui:Toggle name="voiceMuted" label="MUTE MY MICROPHONE" />
+                    <ui:Toggle name="voiceDeafened" label="DEAFEN (MUTES INPUT &amp; OUTPUT)" />
+                    <ui:DropdownField name="voiceMode" label="TRANSMISSION MODE" />
+                    <ui:DropdownField name="microphone" label="MICROPHONE" />
+                    <ui:Button name="refreshMics" text="Refresh microphone devices" class="small" />
+                    <ui:Slider name="voiceVolume" label="INCOMING VOICE VOLUME" low-value="0" high-value="1" />
+                    <ui:Slider name="micGain" label="MICROPHONE GAIN" low-value="0" high-value="3" />
+                    <ui:Slider name="voiceThreshold" label="OPEN-MIC THRESHOLD (HIGHER = LESS SENSITIVE)" low-value="0.001" high-value="0.15" />
+                    <ui:ProgressBar name="micLevel" title="MIC INPUT LEVEL" low-value="0" high-value="100" />
+                    <ui:Button name="testMic" text="Test microphone (local meter)" />
+                    <ui:Label name="voiceStatus" text="Voice ready" class="description" />
+                    <ui:Slider name="voiceRange" label="HEARING DISTANCE (HOST)" low-value="3" high-value="40" />
+                    <ui:Toggle name="lobbyVoice" label="PARTY VOICE IN LOBBY (HOST)" />
+                    <ui:Label text="Voice fades with distance in the workshop. The host controls the maximum range. Lobby chat reaches the whole party. Settings pauses transmission; mic testing stays local. Use headphones to avoid echo." class="description" />
+                    <ui:Label text="WASD move · E interact · Q drop&#10;Right mouse throw · V camera&#10;T push-to-talk · Escape settings" class="description" />
+                    </ui:ScrollView>
+                    <ui:Button name="settingsBack" text="Save &amp; back" class="primary" />
+                </ui:VisualElement>
+                <ui:VisualElement name="party" class="page panel party-panel hidden">
+                    <ui:Label text="NO BEAN LEFT BEHIND" class="eyebrow" />
+                    <ui:Label name="partyTitle" text="Your crew" class="heading" />
+                    <ui:VisualElement name="roster" class="roster" />
+                    <ui:Button name="readyButton" text="I'm ready" class="primary" />
+                    <ui:Button name="launchButton" text="Start game" />
+                    <ui:Button name="partyCustomize" text="Change character" class="quiet" />
+                    <ui:Button name="partySettings" text="Settings &amp; voice" class="quiet" />
+                    <ui:Button name="inviteButton" text="Invite friends" class="quiet" />
+                    <ui:Button name="leaveButton" text="Leave party" class="quiet" />
+                </ui:VisualElement>
+                <ui:VisualElement name="friends" class="page panel hidden">
+                    <ui:Label text="BETTER WITH COMPANY" class="eyebrow" />
+                    <ui:Label text="Invite friends" class="heading" />
+                    <ui:ScrollView class="friend-scroll"><ui:VisualElement name="friendsList" /></ui:ScrollView>
+                    <ui:Button name="refreshFriends" text="Refresh friends" />
+                    <ui:Button name="friendsBack" text="← Back to party" class="quiet" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="footer"><ui:Label name="status" text="Make some questionable teamwork." class="status" /><ui:Label text="UP TO 4 PLAYERS  ·  EVERYONE READIES UP" class="footer-note" /></ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="gameHud" class="hud hidden">
+            <ui:Button name="gameSettings" text="Settings &amp; voice · Esc" />
+            <ui:Button name="gameLeave" text="Leave party" />
+            <ui:Label name="voiceHud" text="Hold T to talk" class="voice-hud" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

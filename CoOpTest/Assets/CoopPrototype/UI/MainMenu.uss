@@ -1,0 +1,57 @@
+:root { color: #f6efdc; font-size: 18px; }
+.shell { flex-grow: 1; padding: 36px 48px 22px 48px; justify-content: space-between; }
+.masthead { flex-direction: row; justify-content: space-between; align-items: flex-start; }
+.brand { font-size: 18px; -unity-font-style: bold; letter-spacing: 3px; color: #f9e6a5; }
+.edition { font-size: 13px; color: #f3efda; background-color: #213b35; padding: 8px 14px; border-radius: 16px; }
+.content { flex-direction: row; flex-grow: 1; align-items: center; }
+.panel { width: 395px; padding: 28px; background-color: rgba(20, 42, 37, .96); border-radius: 18px; border-width: 1px; border-color: rgba(237, 235, 202, .22); }
+.eyebrow { font-size: 12px; letter-spacing: 3px; color: #bdcd97; margin-bottom: 12px; }
+.title { font-size: 50px; -unity-font-style: bold; white-space: normal; margin-bottom: 12px; color: #fff5d8; }
+.heading { font-size: 32px; -unity-font-style: bold; margin-bottom: 14px; }
+.description { font-size: 16px; white-space: normal; color: #c4d0b7; margin-bottom: 20px; }
+Button { background-color: #34564a; color: #fff6df; border-width: 0; border-radius: 8px; padding: 12px 16px; margin: 4px 0; font-size: 18px; -unity-text-align: middle-left; }
+Button:hover { background-color: #496b52; }
+Button:focus { border-width: 2px; border-color: #f5ce6e; }
+Button:disabled { background-color: #35433d; color: #88958a; }
+Button.primary { background-color: #efd174; color: #22392f; -unity-font-style: bold; }
+Button.primary:hover { background-color: #ffe6a0; }
+Button.quiet { background-color: rgba(0,0,0,0); color: #c8d4bc; }
+Button.small { font-size: 13px; padding: 5px 10px; }
+.row { flex-direction: row; align-items: center; }
+.row > Button { flex-grow: 1; margin-right: 6px; }
+.field { margin: 6px 0; }
+.unity-base-field { flex-direction: column; align-items: stretch; margin-bottom: 8px; }
+.unity-base-field__label { color: #bfccb4; font-size: 13px; margin-bottom: 5px; }
+.unity-base-text-field__input, .unity-base-popup-field__input { background-color: #142b25; color: #fff5d8; border-radius: 5px; border-width: 1px; border-color: #60816c; padding: 8px; min-height: 35px; }
+.unity-base-text-field__input > .unity-text-element { color: #fff5d8; }
+.unity-base-slider { height: 60px; }
+.unity-base-slider__tracker { background-color: #718368; height: 5px; }
+.unity-base-slider__dragger { background-color: #efd174; width: 17px; height: 17px; border-radius: 8px; }
+.unity-toggle__checkmark { width: 20px; height: 20px; border-width: 2px; border-color: #efd174; margin-right: 10px; }
+.unity-toggle:checked .unity-toggle__checkmark { background-color: #efd174; }
+.character-name { font-size: 48px; color: #efd174; -unity-font-style: bold; margin: 10px 0; }
+.status { color: #f9e5a9; font-size: 14px; white-space: normal; background-color: rgba(19,38,31,.88); padding: 10px 16px; border-radius: 8px; }
+.footer { flex-direction: row; justify-content: space-between; align-items: center; }
+.footer-note { color: #e9efd9; font-size: 13px; margin-left: 20px; }
+.party-panel { width: 395px; }
+.roster { margin-bottom: 14px; }
+.crew-card { padding: 9px 12px; border-left-width: 3px; border-left-color: #bbce96; background-color: #203c32; margin-bottom: 7px; flex-direction: row; flex-wrap: wrap; align-items: center; }
+.crew-name { width: 100%; font-size: 16px; -unity-font-style: bold; margin-bottom: 4px; }
+.crew-card > Label { margin-right: 12px; }
+.ready { color: #c4ed89; font-size: 12px; -unity-font-style: bold; }
+.waiting { color: #edd498; font-size: 11px; }
+.hidden { display: none; }
+.hud { position: absolute; top: 12px; left: 12px; }
+.hud > Button { font-size: 14px; background-color: rgba(18,34,29,.8); }
+.friend-scroll { max-height: 260px; }
+#connect { padding-top: 18px; padding-bottom: 18px; }
+#connect .unity-base-field { margin-top: 2px; margin-bottom: 2px; }
+#connect .description { margin-bottom: 8px; font-size: 14px; }
+#settings { width: 620px; }
+.settings-scroll { height: 480px; margin-bottom: 12px; }
+.settings-scroll .unity-scroll-view__content-container { padding-right: 18px; }
+.voice-section { margin-top: 24px; }
+.voice-hud { color: #f9e5a9; font-size: 14px; background-color: rgba(18,34,29,.8); padding: 8px; white-space: normal; }
+.unity-progress-bar__background { background-color: #142b25; height: 24px; }
+.unity-progress-bar__progress { background-color: #82b862; }
+.unity-progress-bar__title { color: #ffffff; font-size: 12px; }

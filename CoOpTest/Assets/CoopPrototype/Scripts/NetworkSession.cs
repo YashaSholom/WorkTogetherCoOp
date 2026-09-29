@@ -1,0 +1,185 @@
+using System;
+using System.Linq;
+using System.Text;
+using CoopPrototype.Steam;
+using Unity.Netcode;
+using Unity.Netcode.Transports.UTP;
+using UnityEngine;
+
+namespace CoopPrototype
+{
+    public class NetworkSession : MonoBehaviour
+    {
+        public NetworkManager manager;
+        [Tooltip("Direct (IP) transport: LAN, localhost and Multiplayer Play Mode testing.")]
+        public UnityTransport transport;
+        [Tooltip("Optional Steam friends/lobby flow. Leave empty to hide the Steam tab.")]
+        public SteamLobby steam;
+        public Transform[] spawnPoints;
+        public Camera overviewCamera;
+        [Header("Presentation / session scope")]
+        public bool showPrototypeGUI = true;
+        [HideInInspector] public Frontend.GameFlow flow;
+        public string Status => status;
+        [Header("Server rules")]
+        [Tooltip("Maximum players including the host. The server rejects further connections.")]
+        [Range(1, 16)] public int maxPlayers = 4;
+        [Tooltip("Reject clients whose Application.version differs from the server's.")]
+        public bool requireSameVersion = true;
+        public string address = "127.0.0.1";
+        public ushort port = 7777;
+        string status = "Ready";
+        bool steamTab = true;
+        /// <summary>Screen area of the session menu (GUI coordinates); clicks here don't capture the mouse.</summary>
+        public static Rect MenuRect { get; private set; } = new(12, 12, 320, 250);
+        public static bool MenuVisible => NetworkManager.Singleton == null || !NetworkManager.Singleton.IsListening ||
+            (NetworkManager.Singleton.TryGetComponent<Frontend.GameFlow>(out var flow) && (!flow.InGame || flow.Transitioning || flow.SettingsOpen));
+        void Start()
+        {
+            Application.runInBackground = true;
+            manager.OnClientConnectedCallback += Connected;
+            manager.OnClientDisconnectCallback += Disconnected;
+            manager.OnTransportFailure += TransportFailed;
+            // Server-side admission (both peers must enable approval; it is part of Netcode's config hash).
+            manager.NetworkConfig.ConnectionApproval = true;
+            manager.ConnectionApprovalCallback = Approve;
+            manager.NetworkConfig.ConnectionData = Encoding.UTF8.GetBytes(Application.version);
+            string[] args = Environment.GetCommandLineArgs();
+            for (int i = 0; i < args.Length - 1; i++)
+            {
+                if (args[i] == "-address") address = args[i + 1];
+                if (args[i] == "-port" && ushort.TryParse(args[i + 1], out var result)) port = result;
+            }
+            // Command-line/test launches use Direct (IP); the Steam tab is the default for players when Steam is available.
+            steamTab = steam != null && SteamBootstrap.Ready;
+            if (Array.IndexOf(args, "-host") >= 0) Launch("Host");
+            else if (Array.IndexOf(args, "-server") >= 0) Launch("Server");
+            else if (Array.IndexOf(args, "-client") >= 0) Launch("Client");
+            else if (Array.IndexOf(args, "-steamhost") >= 0 && steam != null) steam.Host();
+        }
+        void Approve(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
+        {
+            string version = request.Payload != null ? Encoding.UTF8.GetString(request.Payload) : "";
+            bool isHostClient = request.ClientNetworkId == NetworkManager.ServerClientId;
+            int players = manager.ConnectedClientsIds.Count;
+            response.CreatePlayerObject = true;
+            response.Pending = false;
+            if (!isHostClient && flow != null && (flow.InGame || flow.Transitioning)) { response.Approved = false; response.Reason = "This party has already started. Join the next round."; }
+            else if (!isHostClient && players >= maxPlayers) { response.Approved = false; response.Reason = $"Session is full ({maxPlayers} players)."; }
+            else if (requireSameVersion && version != Application.version) { response.Approved = false; response.Reason = $"Version mismatch: server {Application.version}, you {version}."; }
+            else response.Approved = true;
+            if (!response.Approved) Debug.Log($"[Coop] Rejected client {request.ClientNetworkId}: {response.Reason}");
+        }
+
+        /// <summary>Server only: removes a player with a reason shown on their screen.</summary>
+        public void Kick(ulong clientId)
+        {
+            if (!manager.IsServer || clientId == NetworkManager.ServerClientId) return;
+            string name = PlayerName(clientId);
+            manager.DisconnectClient(clientId, "Removed from the session by the host.");
+            status = $"Kicked {name}";
+            Debug.Log("[Coop] " + status);
+        }
+
+        string PlayerName(ulong clientId) =>
+            manager.ConnectedClients.TryGetValue(clientId, out var client) && client.PlayerObject != null && client.PlayerObject.TryGetComponent(out PlayerIdentity identity)
+                ? identity.Name : "Player " + clientId;
+
+        void Connected(ulong id) { status = $"Player {id} connected"; Debug.Log("[Coop] " + status); }
+        void Disconnected(ulong id) { status = $"Player {id} disconnected: {manager.DisconnectReason}"; Debug.Log("[Coop] " + status); }
+        void TransportFailed() { status = "Transport failed. Check address/port or Steam connection."; Debug.LogError("[Coop] " + status); }
+
+        /// <summary>Direct (IP) session using Unity Transport.</summary>
+        public void Launch(string mode)
+        {
+            transport.SetConnectionData(address, port, "0.0.0.0");
+            StartWith(transport, mode);
+        }
+
+        /// <summary>Starts Netcode as Host, Server or Client on the given transport.</summary>
+        public bool StartWith(NetworkTransport selected, string mode)
+        {
+            if (manager.IsListening) { status = "Already running"; return false; }
+            manager.NetworkConfig.NetworkTransport = selected;
+            if (flow != null) flow.ConnectionStarted();
+            bool success = mode == "Host" ? manager.StartHost() : mode == "Server" ? manager.StartServer() : manager.StartClient();
+            status = success ? $"{mode} started ({(selected is SteamP2PTransport ? "Steam" : "Direct")})" : "Failed to start " + mode;
+            Debug.Log("[Coop] " + status);
+            return success;
+        }
+
+        public void Stop()
+        {
+            if (manager.IsListening) manager.Shutdown();
+            if (steam != null) steam.Leave();
+            Cursor.lockState = CursorLockMode.None;
+            status = "Stopped";
+        }
+        void Update()
+        {
+            if (!showPrototypeGUI) MenuRect = new Rect(0, 0, 380, 160);
+            if (overviewCamera != null) overviewCamera.gameObject.SetActive(manager.LocalClient == null || manager.LocalClient.PlayerObject == null);
+        }
+        void OnGUI()
+        {
+            if (!showPrototypeGUI) return;
+            bool steamSession = manager.IsListening && manager.NetworkConfig.NetworkTransport is SteamP2PTransport;
+            bool hostingSteam = steamSession && manager.IsServer;
+            int listed = manager.IsServer ? manager.ConnectedClientsIds.Count : 0;
+            float height = (!manager.IsListening ? 250 : hostingSteam ? 330 : 120) + (listed > 0 ? 26 + listed * 24 : 0);
+            MenuRect = new Rect(12, 12, 320, height);
+            GUILayout.BeginArea(MenuRect, GUI.skin.box);
+            GUILayout.Label("CO-OP WORKSHOP | " + (manager.IsHost ? "Host" : manager.IsServer ? "Server" : manager.IsConnectedClient ? "Client" : "Offline") + (steamSession ? " (Steam)" : manager.IsListening ? " (Direct)" : ""));
+            GUILayout.Label(status);
+            if (!manager.IsListening)
+            {
+                if (steam != null)
+                {
+                    GUILayout.BeginHorizontal();
+                    if (GUILayout.Toggle(steamTab, "Steam", GUI.skin.button)) steamTab = true;
+                    if (GUILayout.Toggle(!steamTab, "Direct (IP)", GUI.skin.button)) steamTab = false;
+                    GUILayout.EndHorizontal();
+                }
+                if (steam != null && steamTab) steam.DrawGUI(0);
+                else
+                {
+                    GUILayout.Label("Address (localhost: 127.0.0.1)");
+                    address = GUILayout.TextField(address);
+                    GUILayout.BeginHorizontal();
+                    if (GUILayout.Button("Start Host")) Launch("Host");
+                    if (GUILayout.Button("Start Client")) Launch("Client");
+                    if (GUILayout.Button("Start Server")) Launch("Server");
+                    GUILayout.EndHorizontal();
+                    GUILayout.Label($"Port {port}");
+                }
+            }
+            else
+            {
+                if (manager.IsServer) DrawPlayers();
+                if (steamSession && steam != null) steam.DrawGUI(150);
+                if (GUILayout.Button("Disconnect / Stop")) Stop();
+            }
+            GUILayout.Label("Click world to capture mouse | Esc releases");
+            GUILayout.EndArea();
+        }
+        void DrawPlayers()
+        {
+            GUILayout.Label($"Players {manager.ConnectedClientsIds.Count}/{maxPlayers}");
+            foreach (var id in manager.ConnectedClientsIds.ToArray())
+            {
+                GUILayout.BeginHorizontal();
+                GUILayout.Label((id == NetworkManager.ServerClientId ? "★ " : "• ") + PlayerName(id), GUILayout.Width(220));
+                if (id != NetworkManager.ServerClientId && GUILayout.Button("Kick")) Kick(id);
+                GUILayout.EndHorizontal();
+            }
+        }
+
+        void OnDestroy()
+        {
+            if (manager == null) return;
+            manager.OnClientConnectedCallback -= Connected;
+            manager.OnClientDisconnectCallback -= Disconnected;
+            manager.OnTransportFailure -= TransportFailed;
+        }
+    }
+}

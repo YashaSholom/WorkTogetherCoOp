@@ -1,0 +1,745 @@
+{
+ "materials": [
+  {
+   "name": "Bean Blush",
+   "rgb": [
+    236,
+    120,
+    120
+   ],
+   "roughness": 0.8,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Bean Eye White",
+   "rgb": [
+    250,
+    248,
+    240
+   ],
+   "roughness": 0.35,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Bean Ink",
+   "rgb": [
+    30,
+    26,
+    30
+   ],
+   "roughness": 0.5,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Bean Rubber",
+   "rgb": [
+    60,
+    55,
+    60
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Bean Skin Brown",
+   "rgb": [
+    150,
+    98,
+    64
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Bean Skin Peach",
+   "rgb": [
+    241,
+    190,
+    150
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Bean Skin Pink",
+   "rgb": [
+    240,
+    172,
+    158
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Bean Skin Tan",
+   "rgb": [
+    214,
+    160,
+    112
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Bolt Beanie",
+   "rgb": [
+    214,
+    58,
+    52
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Bolt Hoodie",
+   "rgb": [
+    240,
+    178,
+    48
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Bolt Jeans",
+   "rgb": [
+    52,
+    78,
+    140
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Bolt Nose",
+   "rgb": [
+    236,
+    150,
+    120
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Bolt Pocket",
+   "rgb": [
+    220,
+    155,
+    36
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Bolt Pompom",
+   "rgb": [
+    250,
+    245,
+    230
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Bolt Sneakers",
+   "rgb": [
+    240,
+    240,
+    235
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Dot Boots",
+   "rgb": [
+    60,
+    150,
+    80
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Dot Brass",
+   "rgb": [
+    230,
+    190,
+    70
+   ],
+   "roughness": 0.3,
+   "metallic": 0.6,
+   "emission": []
+  },
+  {
+   "name": "Dot Cap",
+   "rgb": [
+    40,
+    170,
+    120
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Dot Freckle",
+   "rgb": [
+    170,
+    100,
+    60
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Dot Hair",
+   "rgb": [
+    220,
+    100,
+    40
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Dot Nose",
+   "rgb": [
+    224,
+    150,
+    100
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Dot Overalls",
+   "rgb": [
+    120,
+    80,
+    170
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Dot Tee",
+   "rgb": [
+    245,
+    240,
+    230
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Gus Belt",
+   "rgb": [
+    40,
+    32,
+    30
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Gus Boots",
+   "rgb": [
+    70,
+    48,
+    36
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Gus Gloves",
+   "rgb": [
+    200,
+    170,
+    90
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Gus Grey Hair",
+   "rgb": [
+    130,
+    120,
+    115
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Gus Hard Hat",
+   "rgb": [
+    255,
+    204,
+    40
+   ],
+   "roughness": 0.45,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Gus Hi-Vis",
+   "rgb": [
+    250,
+    120,
+    30
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Gus Nose",
+   "rgb": [
+    230,
+    130,
+    120
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Gus Reflective",
+   "rgb": [
+    230,
+    235,
+    200
+   ],
+   "roughness": 0.3,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Gus Shirt",
+   "rgb": [
+    110,
+    140,
+    170
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Gus Trousers",
+   "rgb": [
+    88,
+    70,
+    58
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Pip Glasses",
+   "rgb": [
+    30,
+    30,
+    36
+   ],
+   "roughness": 0.4,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Pip Hair",
+   "rgb": [
+    40,
+    30,
+    30
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Pip Lab Coat",
+   "rgb": [
+    236,
+    240,
+    242
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Pip Lens",
+   "rgb": [
+    200,
+    230,
+    240
+   ],
+   "roughness": 0.1,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Pip Loafers",
+   "rgb": [
+    120,
+    60,
+    40
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Pip Nose",
+   "rgb": [
+    135,
+    86,
+    56
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Pip Pen 0",
+   "rgb": [
+    220,
+    60,
+    60
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Pip Pen 1",
+   "rgb": [
+    60,
+    90,
+    220
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Pip Shirt",
+   "rgb": [
+    120,
+    170,
+    230
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Pip Trousers",
+   "rgb": [
+    60,
+    150,
+    150
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Black",
+   "rgb": [
+    36,
+    34,
+    40
+   ],
+   "roughness": 0.6,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Blue",
+   "rgb": [
+    70,
+    120,
+    210
+   ],
+   "roughness": 0.5,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Bulb Off",
+   "rgb": [
+    200,
+    196,
+    180
+   ],
+   "roughness": 0.3,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Cardboard",
+   "rgb": [
+    200,
+    150,
+    95
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Cell Green",
+   "rgb": [
+    70,
+    200,
+    110
+   ],
+   "roughness": 0.45,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Copper",
+   "rgb": [
+    220,
+    140,
+    80
+   ],
+   "roughness": 0.35,
+   "metallic": 0.7,
+   "emission": []
+  },
+  {
+   "name": "Prop Cream",
+   "rgb": [
+    245,
+    236,
+    210
+   ],
+   "roughness": 0.6,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Dial",
+   "rgb": [
+    240,
+    240,
+    230
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Door Blue",
+   "rgb": [
+    60,
+    110,
+    150
+   ],
+   "roughness": 0.6,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Door Line",
+   "rgb": [
+    45,
+    85,
+    120
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Glass",
+   "rgb": [
+    180,
+    225,
+    240
+   ],
+   "roughness": 0.1,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Glow",
+   "rgb": [
+    255,
+    230,
+    150
+   ],
+   "roughness": 0.3,
+   "metallic": 0.0,
+   "emission": [
+    255,
+    220,
+    130
+   ]
+  },
+  {
+   "name": "Prop Iron",
+   "rgb": [
+    70,
+    76,
+    86
+   ],
+   "roughness": 0.5,
+   "metallic": 0.4,
+   "emission": []
+  },
+  {
+   "name": "Prop Orange",
+   "rgb": [
+    250,
+    130,
+    40
+   ],
+   "roughness": 0.55,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Pad",
+   "rgb": [
+    90,
+    96,
+    104
+   ],
+   "roughness": 0.8,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Pegboard",
+   "rgb": [
+    205,
+    175,
+    130
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Pine",
+   "rgb": [
+    222,
+    164,
+    96
+   ],
+   "roughness": 0.8,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Pine Dark",
+   "rgb": [
+    160,
+    104,
+    58
+   ],
+   "roughness": 0.85,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Red",
+   "rgb": [
+    225,
+    60,
+    52
+   ],
+   "roughness": 0.55,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Rubber",
+   "rgb": [
+    45,
+    42,
+    48
+   ],
+   "roughness": 0.9,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Steel",
+   "rgb": [
+    170,
+    178,
+    188
+   ],
+   "roughness": 0.35,
+   "metallic": 0.7,
+   "emission": []
+  },
+  {
+   "name": "Prop Tape",
+   "rgb": [
+    230,
+    200,
+    140
+   ],
+   "roughness": 0.75,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Teal",
+   "rgb": [
+    50,
+    150,
+    160
+   ],
+   "roughness": 0.5,
+   "metallic": 0.0,
+   "emission": []
+  },
+  {
+   "name": "Prop Yellow",
+   "rgb": [
+    255,
+    200,
+    40
+   ],
+   "roughness": 0.5,
+   "metallic": 0.0,
+   "emission": []
+  }
+ ]
+}
