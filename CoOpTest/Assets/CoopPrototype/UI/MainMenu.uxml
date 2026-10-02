@@ -3,14 +3,14 @@
     <ui:VisualElement name="root" class="shell" picking-mode="Ignore">
         <ui:VisualElement name="menuShell" class="shell">
             <ui:VisualElement class="masthead">
-                <ui:Label text="BEAN CREW  /  CO-OP" class="brand" />
-                <ui:Label text="GOOD COMPANY. BAD IDEAS." class="edition" />
+                <ui:Label text="SECTOR 07  /  BORDER CONTROL" class="brand" />
+                <ui:Label text="ONE GALAXY. QUESTIONABLE VISITORS." class="edition" />
             </ui:VisualElement>
             <ui:VisualElement class="content">
                 <ui:VisualElement name="home" class="page panel">
-                    <ui:Label text="CLOCK IN TOGETHER" class="eyebrow" />
-                    <ui:Label text="Small crew.&#10;Big trouble." class="title" />
-                    <ui:Label text="Bring your friends. Pick your misfit. There is probably work to do." class="description" />
+                    <ui:Label text="YOUR SHIFT AT THE EDGE OF SPACE" class="eyebrow" />
+                    <ui:Label text="Papers,&#10;earthlings." class="title" />
+                    <ui:Label text="Alien arrivals. Flying cars. Shared paperwork. Bring your crew and decide who gets in." class="description" />
                     <ui:Button name="startButton" text="Start playing  →" class="primary" />
                     <ui:Button name="customizeButton" text="Choose your character" />
                     <ui:Button name="settingsButton" text="Settings" />
@@ -60,9 +60,10 @@
                     <ui:Slider name="voiceRange" label="HEARING DISTANCE (HOST)" low-value="3" high-value="40" />
                     <ui:Toggle name="lobbyVoice" label="PARTY VOICE IN LOBBY (HOST)" />
                     <ui:Label text="Voice fades with distance in the workshop. The host controls the maximum range. Lobby chat reaches the whole party. Settings pauses transmission; mic testing stays local. Use headphones to avoid echo." class="description" />
-                    <ui:Label text="WASD move · E interact · Q drop&#10;Right mouse throw · V camera&#10;T push-to-talk · Escape settings" class="description" />
+                    <ui:Label text="WASD move · E interact · Q drop&#10;Right mouse inspect / rotate · F throw · V camera&#10;T push-to-talk · Escape settings" class="description" />
                     </ui:ScrollView>
                     <ui:Button name="settingsBack" text="Save &amp; back" class="primary" />
+                    <ui:Button name="settingsLeave" text="Leave game" class="quiet" />
                 </ui:VisualElement>
                 <ui:VisualElement name="party" class="page panel party-panel hidden">
                     <ui:Label text="NO BEAN LEFT BEHIND" class="eyebrow" />
@@ -83,12 +84,11 @@
                     <ui:Button name="friendsBack" text="← Back to party" class="quiet" />
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement class="footer"><ui:Label name="status" text="Make some questionable teamwork." class="status" /><ui:Label text="UP TO 4 PLAYERS  ·  EVERYONE READIES UP" class="footer-note" /></ui:VisualElement>
+            <ui:VisualElement class="footer"><ui:Label name="status" text="The next shuttle is already on its way." class="status" /><ui:Label text="UP TO 4 PLAYERS  ·  EVERYONE READIES UP" class="footer-note" /></ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="gameHud" class="hud hidden">
-            <ui:Button name="gameSettings" text="Settings &amp; voice · Esc" />
-            <ui:Button name="gameLeave" text="Leave party" />
-            <ui:Label name="voiceHud" text="Hold T to talk" class="voice-hud" />
+            <ui:Button name="gameSettings" text="Settings &amp; voice · Esc" focusable="false" />
+            <ui:Label name="voiceHud" text="Hold T to talk" class="voice-hud" picking-mode="Ignore" focusable="false" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279cca8136023fe42be3eddd29d364c9, type: 3}
+  m_Name: Checkpoint Codex
+  m_EditorClassIdentifier: Assembly-CSharp::CoopPrototype.Checkpoint.CheckpointCodex
+  federations:
+  - {fileID: 11400000, guid: 9583e26918a53a54e96bd626387acb97, type: 2}
+  - {fileID: 11400000, guid: f9ac7e19b9976194da5e770e33ee5ef8, type: 2}
+  - {fileID: 11400000, guid: f8a5a6359c0e0514ab0cb33dc12dbce9, type: 2}
+  - {fileID: 11400000, guid: 8440c44c48e6c7e4da6a2476e273e6a9, type: 2}
+  - {fileID: 11400000, guid: 18cc0bf98806c2244a514c12b8aeff47, type: 2}
+  manufacturers:
+  - {fileID: 11400000, guid: a6e8bfa036bbd6449987f9f0d676a080, type: 2}
+  - {fileID: 11400000, guid: ef2874f2d62a3204a81b447a1e07988c, type: 2}
+  - {fileID: 11400000, guid: 8d2b598ca3dc3ea41aa04a6dc8856ad7, type: 2}
+  vehicles:
+  - {fileID: 11400000, guid: cefa8df2cf0dac349a6ab43ddd98c834, type: 2}
+  - {fileID: 11400000, guid: 72a6edd2b9159af4eb65849d0dfbf2a5, type: 2}
+  races:
+  - {fileID: 11400000, guid: 030370089bc23c245ad99a8d5239ef1e, type: 2}
+  - {fileID: 11400000, guid: 8897cfa3ce54ee54b82f1ee3691964e7, type: 2}

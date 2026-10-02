@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89944719fac15f0449e5df9bef98999e, type: 3}
+  m_Name: Federation_OTR
+  m_EditorClassIdentifier: Assembly-CSharp::CoopPrototype.Checkpoint.FederationDefinition
+  displayName: Ossari Tide Republic
+  code: OTR
+  emblem: {fileID: 2800000, guid: 9064e85792f65d74d8a71880f5e27b01, type: 3}
+  colour: {r: 0.93, g: 0.31, b: 0.51, a: 1}
+  capital: Mirror Harbour
+  description: 'Ocean-moon republic of market towns and preserve makers. Seal: a
+    crescent over waves.'

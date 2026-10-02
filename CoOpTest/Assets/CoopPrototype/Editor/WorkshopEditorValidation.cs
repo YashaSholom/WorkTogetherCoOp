@@ -69,9 +69,37 @@ namespace CoopPrototype.Editor
             string folder = Path.GetFullPath(Path.Combine(Application.dataPath, "../Temp"));
             var manager = NetworkManager.Singleton;
             var local = manager != null && manager.LocalClient != null && manager.LocalClient.PlayerObject != null ? manager.LocalClient.PlayerObject.GetComponent<PlayerInteractor>() : null;
+            if (r.command.StartsWith("cp")) return CheckpointEditorValidation.Execute(r);
             switch (r.command)
             {
+                case "layoutapply": return PlanetArtRedesign.ApplyCheckpointLayout();
+                case "layoutinspect": return PlanetArtRedesign.LayoutInspect();
+                case "layoutpreview": return PlanetArtRedesign.LayoutPreview(r.target);
+                case "layoutvalidate": return PlanetArtRedesign.LayoutValidate();
+                case "layoutfinish": return PlanetArtRedesign.LayoutFinish();
+                case "planetapply": PlanetArtRedesign.Apply(); return "Velora redesign saved";
+                case "planetrefine": return PlanetArtRedesign.Refine();
+                case "planetcrew": return PlanetArtRedesign.Crew();
+                case "planetinspect": return PlanetArtRedesign.Inspect();
+                case "planetpreview": return PlanetArtRedesign.Preview(r.target);
+                case "planetvalidate": return PlanetArtRedesign.ValidateCrew();
+                case "planetarms": return PlanetArtRedesign.Arms();
+                case "selection":
+                {
+                    var go = UnityEditor.Selection.activeGameObject;
+                    var sb = new System.Text.StringBuilder();
+                    sb.AppendLine("playing=" + EditorApplication.isPlaying + " scenes=" + string.Join(",", Enumerable.Range(0, UnityEngine.SceneManagement.SceneManager.sceneCount).Select(i => UnityEngine.SceneManagement.SceneManager.GetSceneAt(i).name)));
+                    if (go == null) { sb.AppendLine("selection: none"); return sb.ToString(); }
+                    string Path(Transform t) => t.parent == null ? t.name : Path(t.parent) + "/" + t.name;
+                    sb.AppendLine("selected=" + Path(go.transform) + " scene=" + go.scene.name + " valid=" + go.scene.IsValid() + " isPrefabAsset=" + UnityEditor.EditorUtility.IsPersistent(go) + " assetPath=" + AssetDatabase.GetAssetPath(go));
+                    sb.AppendLine("stage=" + (UnityEditor.SceneManagement.StageUtility.GetStage(go) != null ? UnityEditor.SceneManagement.StageUtility.GetStage(go).GetType().Name : "?"));
+                    sb.AppendLine("hideFlags=" + go.hideFlags);
+                    return sb.ToString();
+                }
                 case "refresh": AssetDatabase.Refresh(); return "Asset refresh requested";
+                case "checkpointdata": CheckpointDataSetup.Create(); return "Checkpoint sample data created (existing assets preserved)";
+                case "checkpointsetup": CheckpointSceneSetup.Setup(); return "Checkpoint scenes saved";
+                case "checkpointpreview": CheckpointSceneSetup.Preview(r.target); return "Checkpoint preview saved";
                 case "menusetup": MainMenuSetup.Create(); return "Menu scenes created";
                 case "voicesetup": VoiceSetup.Configure(); return "Voice configured";
                 case "voicecodec": VoiceValidation.Run(); return "Codec validation passed";

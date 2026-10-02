@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de4748830b7d504c906d3e04af2f3cb, type: 3}
+  m_Name: Traveller_1
+  m_EditorClassIdentifier: Assembly-CSharp::CoopPrototype.Checkpoint.TravellerDefinition
+  travellerId: traveller-1
+  displayName: Milo Quark
+  portrait: {fileID: 2800000, guid: b32e7a374b4780f4fa93753a9fa10344, type: 3}
+  birthDate: 2177-06-08
+  birthPlace: Orion Exchange
+  race: Veloran
+  vehicleModel: Comet Hopper
+  vehicleRegistration: OR-718
+  federation: {fileID: 11400000, guid: f9ac7e19b9976194da5e770e33ee5ef8, type: 2}
+  raceInfo: {fileID: 11400000, guid: 030370089bc23c245ad99a8d5239ef1e, type: 2}
+  vehicle: {fileID: 11400000, guid: cefa8df2cf0dac349a6ab43ddd98c834, type: 2}
+  bounty: 90
+  skinColor: {r: 0.42, g: 0.88, b: 0.5, a: 1}

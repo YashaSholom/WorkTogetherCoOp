@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706614fe32dd185449ccd5d44280f621, type: 3}
+  m_Name: Vehicle_CometHopper
+  m_EditorClassIdentifier: Assembly-CSharp::CoopPrototype.Checkpoint.VehicleModelDefinition
+  modelName: Comet Hopper
+  manufacturer: {fileID: 11400000, guid: a6e8bfa036bbd6449987f9f0d676a080, type: 2}
+  kind: 0
+  picture: {fileID: 2800000, guid: 1e3d30dba4b84f44db4188e0b065624f, type: 3}
+  description: Round two-seat hover shuttle. Bobs gently while parked. Carries no
+    cargo.

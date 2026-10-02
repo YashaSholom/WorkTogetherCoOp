@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85d633a72bf8604589312d801505b93, type: 3}
+  m_Name: Document_1_0
+  m_EditorClassIdentifier: Assembly-CSharp::CoopPrototype.Checkpoint.DocumentDefinition
+  documentId: visitor-1-0
+  kind: {fileID: 11400000, guid: 7cdd2ed7a13729a4193f378f771b8141, type: 2}
+  traveller: {fileID: 11400000, guid: 9c58abc675e27b646b923508da816e28, type: 2}
+  expiresOn: 2220-12-31
+  fields:
+  - key: name
+    label: Name
+    value: Milo Quark
+  - key: birth-date
+    label: Date of birth
+    value: 2177-06-08
+  - key: issuer
+    label: Issued by
+    value: Orion Concord
+  - key: race
+    label: Race
+    value: Veloran
+  - key: id-number
+    label: ID number
+    value: ORC-0718-MQ

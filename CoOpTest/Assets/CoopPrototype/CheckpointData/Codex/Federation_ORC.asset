@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89944719fac15f0449e5df9bef98999e, type: 3}
+  m_Name: Federation_ORC
+  m_EditorClassIdentifier: Assembly-CSharp::CoopPrototype.Checkpoint.FederationDefinition
+  displayName: Orion Concord
+  code: ORC
+  emblem: {fileID: 2800000, guid: 43e8424c8f1f82149b17542b2d74b20d, type: 3}
+  colour: {r: 0.46, g: 0.34, b: 0.94, a: 1}
+  capital: Orion Exchange
+  description: 'Trade council of the Orion belt. Seal: a four-point star with three
+    small stars.'

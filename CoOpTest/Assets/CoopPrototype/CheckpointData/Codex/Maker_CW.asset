@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad222dbd6ae39f43a9af258980cd7ca, type: 3}
+  m_Name: Maker_CW
+  m_EditorClassIdentifier: Assembly-CSharp::CoopPrototype.Checkpoint.VehicleManufacturer
+  displayName: Comet Works
+  code: CW
+  emblem: {fileID: 2800000, guid: bb7bc341de2cb1641bc6722e03f4cc27, type: 3}
+  colour: {r: 0.23, g: 0.59, b: 0.96, a: 1}
+  description: 'Orion-belt shuttle builder. Passenger shuttles only. Badge: a comet.'

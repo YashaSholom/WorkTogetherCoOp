@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7971a4c63fe0edf4f9fd894d3165c183, type: 3}
+  m_Name: Case_2
+  m_EditorClassIdentifier: Assembly-CSharp::CoopPrototype.Checkpoint.TravellerCase
+  traveller: {fileID: 11400000, guid: 8be55dbe3334f2e48bc50604aa754c51, type: 2}
+  documents:
+  - {fileID: 11400000, guid: 41f07611432c8e441bb0172b757992bc, type: 2}
+  - {fileID: 11400000, guid: aac97704c5dc4584c8538b70082632b6, type: 2}
+  greeting: Hello! I hope your quarantine rules allow moon-fruit.
+  purpose: Delivering fruit to the orbital market. It only glows a little.
+  vehicleAnswer: A Comet Hopper, registration LS-209. No wheels, no problem.
+  skinColor: {r: 0.95, g: 0.6, b: 0.32, a: 1}
+  vehicle: 0
+  packages: []
+  companions: []
+  companionAnswer: Just me, officer.

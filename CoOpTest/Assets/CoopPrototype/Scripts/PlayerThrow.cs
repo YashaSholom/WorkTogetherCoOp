@@ -22,8 +22,8 @@ namespace CoopPrototype
         void Update()
         {
             if (!IsSpawned) return;
-            if (IsOwner && IsClient && Cursor.lockState == CursorLockMode.Locked &&
-                Mouse.current != null && Mouse.current.rightButton.wasPressedThisFrame) RequestThrowRpc();
+            if (IsOwner && IsClient && !LocalGameplayModal.BlocksInput && !NetworkSession.MenuVisible && Cursor.lockState == CursorLockMode.Locked &&
+                Keyboard.current != null && Keyboard.current.fKey.wasPressedThisFrame) RequestThrowRpc();
             if (!IsServer || pending == null || NetworkManager.ServerTime.Time < StartedAt.Value + releaseDelay) return;
             // Release can be cancelled by despawn/disconnect. A client never provides force or object identity.
             if (pending.IsSpawned && pending.Holder.Value == NetworkObjectId)

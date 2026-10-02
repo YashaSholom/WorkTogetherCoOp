@@ -13,11 +13,11 @@ namespace CoopPrototype.Frontend
         public GameObject gameplayPlayerPrefab;
         public string menuScene = "MainMenu";
         public string gameScene = "GameWorld";
-        public string[] characterNames = { "Bolt", "Gus", "Pip", "Dot" };
+        public string[] characterNames = { "Orange", "Blue", "Green", "Yellow" };
         public bool Transitioning { get; private set; }
         public bool InGame { get; private set; }
         public bool SettingsOpen { get; set; }
-        public string Message { get; private set; } = "Make some questionable teamwork.";
+        public string Message { get; private set; } = "The next shuttle is already on its way.";
         public int CharacterCount => characterNames.Length;
         public NetworkSession Session { get; private set; }
         public IPlayerPreferences Preferences { get; private set; }
@@ -60,7 +60,7 @@ namespace CoopPrototype.Frontend
         void SceneEvent(SceneEvent ev)
         {
             if (ev.SceneEventType == SceneEventType.Load && ev.SceneName == gameScene)
-            { Transitioning = true; Message = "Loading the workshop for everyone…"; }
+            { Transitioning = true; Message = "Loading the checkpoint for everyone…"; }
         }
         public void Connect(bool host, string address, ushort port, int capacity, bool steam)
         {
@@ -88,8 +88,8 @@ namespace CoopPrototype.Frontend
             foreach (var member in members) profiles[member.OwnerClientId] = (member.Character.Value, member.DisplayName.Value.ToString());
             Transitioning = true;
             var result = Session.manager.SceneManager.LoadScene(gameScene, LoadSceneMode.Single);
-            if (result != SceneEventProgressStatus.Started) { Transitioning = false; Message = "Could not load the workshop: " + result; return false; }
-            Message = "Loading the workshop for everyone…";
+            if (result != SceneEventProgressStatus.Started) { Transitioning = false; Message = "Could not load the checkpoint: " + result; return false; }
+            Message = "Loading the checkpoint for everyone…";
             Debug.Log("[Lobby] All ready. Shared scene load started.");
             return true;
         }
@@ -117,12 +117,12 @@ namespace CoopPrototype.Frontend
                 player.GetComponent<NetworkObject>().SpawnAsPlayerObject(id, true);
                 if (profiles.TryGetValue(id, out var profile))
                 {
-                    player.GetComponent<CharacterAppearance>().Variant.Value = profile.character;
+                    player.GetComponent<CharacterAppearance>().ServerSetPreferred(profile.character);
                     player.GetComponent<PlayerIdentity>().DisplayName.Value = new Unity.Collections.FixedString64Bytes(profile.name);
                 }
             }
             Transitioning = false;
-            Message = "Workshop started.";
+            Message = "Checkpoint shift started.";
         }
         public void BindPlayer(NetworkPlayerMotor motor)
         {

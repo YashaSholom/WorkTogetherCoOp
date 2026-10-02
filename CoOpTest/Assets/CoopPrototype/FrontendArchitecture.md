@@ -29,7 +29,7 @@ The one-time MainMenuSetup editor authoring tool opens existing menu content ins
 
 Choose character / Settings → Start playing → Direct IP / LAN or Steam friends → Host / Connect → party roster → everyone ready → host Start game → synchronized GameWorld.
 
-Changing character clears that player's ready flag. A joining player starts unready. Admission closes during loading and gameplay; this party flow has no mid-round joining, reconnection or host migration. Legacy CoopWorkshop still supports persistent-state late joining. Escape releases the cursor so Leave party can be clicked; leaving replaces the session scope and returns to MainMenu. Host departure returns clients to the menu.
+Changing character clears that player's ready flag. A joining player starts unready. Admission closes during loading and gameplay; this party flow has no mid-round joining, reconnection or host migration. Legacy CoopWorkshop still supports persistent-state late joining. Escape releases the cursor so Leave game (in Settings) can be clicked; leaving replaces the session scope and returns to MainMenu. Host departure returns clients to the menu.
 
 Direct localhost testing uses MPPM Player 2 and 127.0.0.1:7777 without builds. LAN friends use the host machine's reachable LAN IP. Steam uses the existing friends lobby/P2P implementation; Host then Invite friends lists online friends, and accepting an invite connects to the lobby. No invites are sent automatically. Test App ID 480 requires the game already open on both accounts. Steam P2P cannot be tested between MPPM instances sharing one account.
 

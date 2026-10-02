@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f3134071624ced4a943c51347dc3946, type: 3}
+  m_Name: Race_Veloran
+  m_EditorClassIdentifier: Assembly-CSharp::CoopPrototype.Checkpoint.RaceDefinition
+  displayName: Veloran
+  model: {fileID: 4096494064755211828, guid: f550645b53a1f9f4fb79b531479487f9, type: 3}
+  portrait: {fileID: 2800000, guid: b32e7a374b4780f4fa93753a9fa10344, type: 3}
+  homeworld: Velora Prime
+  description: Cheerful, big-headed wanderers from the lavender deserts. Most visitors
+    to Sector 07 are Veloran.
+  identifyingFeatures: "\u2022 Two thin antennae with glowing tips\n\u2022 Two large,
+    glossy black eyes\n\u2022 Smooth round head, small hands\n\u2022 No horns and
+    no tusks"

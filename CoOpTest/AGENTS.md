@@ -4,7 +4,10 @@ Applies to this entire Unity project.
 
 ## Start here
 
+- For the alien checkpoint feature, read and maintain `ALIEN_CHECKPOINT.md`. It contains the user brief, live checklist, current implementation status and cross-account handoff instructions.
+
 - Read `INIT.md` and `Assets/CoopPrototype/README.md` before changing the prototype.
+- Every new feature follows `FEATURE_IMPLEMENTATION.md`, including evaluating it for the F1 debug panel and adding its debug commands/buttons (`Scripts/Debugging`).
 - Project root is `D:\WorkTogetherCoOp\CoOpTest`; `Assets` is its asset directory, not the Unity project root.
 - Inspect installed packages and existing systems before adding dependencies or duplicating functionality.
 - Use the project's Unity version from `ProjectSettings/ProjectVersion.txt`.
@@ -31,3 +34,12 @@ Applies to this entire Unity project.
 - Log meaningful connection, interaction and state changes, not per-frame activity.
 - Preserve Unity `.meta` files and GUIDs. Do not edit generated `Library`, `Temp`, or package-cache content as project source.
 - Update project documentation when changing setup, controls, architecture, or testing workflows.
+
+## One-off setup and rebuild scripts
+
+- Never leave a script in the project that rebuilds or regenerates authored content from hard-coded values (scene objects, splines, prefabs, animation clips, meshes, materials). The owner edits these by hand, and a re-run would overwrite those edits.
+- Such a script may be created to carry out a task. Once it has run and the result is verified, delete the script, its `.meta`, its menu item and any mailbox command that calls it, in the same task. Keep what it produced.
+- Do not add `[MenuItem]` entries for one-off setup or rebuild work.
+- Never re-run an existing setup or rebuild script (including the older `*Setup` / `PrototypeBuilder` / `PlanetArtRedesign` editor tools) without the owner asking for it explicitly; assume the scene, prefabs and assets have been edited by hand since.
+- To change something that was generated earlier, edit the existing objects and assets in place instead of regenerating them.
+- Runtime components that derive presentation from authored data (for example `SplineRoad`, which builds the road mesh from the spline the owner edits) are not rebuild scripts and stay.

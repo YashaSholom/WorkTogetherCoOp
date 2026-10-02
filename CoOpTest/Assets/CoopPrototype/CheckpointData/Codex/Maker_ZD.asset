@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad222dbd6ae39f43a9af258980cd7ca, type: 3}
+  m_Name: Maker_ZD
+  m_EditorClassIdentifier: Assembly-CSharp::CoopPrototype.Checkpoint.VehicleManufacturer
+  displayName: Zephyr Drive Co.
+  code: ZD
+  emblem: {fileID: 2800000, guid: f00af908311e5884ab24a776e66a2528, type: 3}
+  colour: {r: 0.67, g: 0.51, b: 0.98, a: 1}
+  description: Racing gliders. No Zephyr model is certified for Sector 07.

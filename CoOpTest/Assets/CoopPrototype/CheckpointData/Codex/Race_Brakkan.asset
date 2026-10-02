@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f3134071624ced4a943c51347dc3946, type: 3}
+  m_Name: Race_Brakkan
+  m_EditorClassIdentifier: Assembly-CSharp::CoopPrototype.Checkpoint.RaceDefinition
+  displayName: Brakkan
+  model: {fileID: 4096494064755211828, guid: f550645b53a1f9f4fb79b531479487f9, type: 3}
+  portrait: {fileID: 2800000, guid: b32e7a374b4780f4fa93753a9fa10344, type: 3}
+  homeworld: The Brakka forge belt
+  description: Stocky hauler folk from the forge asteroids. Gruff, strong, excellent
+    at lifting crates.
+  identifyingFeatures: "\u2022 One large central eye under a heavy brow\n\u2022 Two
+    curved horns\n\u2022 Small lower tusks\n\u2022 Wide flat head and broad shoulder
+    pads"

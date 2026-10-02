@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7971a4c63fe0edf4f9fd894d3165c183, type: 3}
+  m_Name: Case_1
+  m_EditorClassIdentifier: Assembly-CSharp::CoopPrototype.Checkpoint.TravellerCase
+  traveller: {fileID: 11400000, guid: 9c58abc675e27b646b923508da816e28, type: 2}
+  documents:
+  - {fileID: 11400000, guid: e5456ecb46be5c6459b93da103d257be, type: 2}
+  - {fileID: 11400000, guid: 24f3f2f8b12e7514fa766f1c042539dc, type: 2}
+  greeting: Good shift, officer. My navigation system insists this is a shortcut.
+  purpose: A conference about unusually small black holes. Three days, maximum.
+  vehicleAnswer: A Comet Hopper, registration OR-718. No wheels, no problem.
+  skinColor: {r: 0.68, g: 0.46, b: 0.91, a: 1}
+  vehicle: 0
+  packages: []
+  companions:
+  - {fileID: 11400000, guid: 1350f90d965b8294da44d0a5a6e0b2bc, type: 2}
+  companionAnswer: My partner Lumi is in the passenger seat. Wave, Lumi!

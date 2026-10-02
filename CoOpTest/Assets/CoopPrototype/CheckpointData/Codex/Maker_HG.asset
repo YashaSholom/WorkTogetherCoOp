@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad222dbd6ae39f43a9af258980cd7ca, type: 3}
+  m_Name: Maker_HG
+  m_EditorClassIdentifier: Assembly-CSharp::CoopPrototype.Checkpoint.VehicleManufacturer
+  displayName: Haulgard Industries
+  code: HG
+  emblem: {fileID: 2800000, guid: db2db77c5b991ff4c89d99a368290cad, type: 3}
+  colour: {r: 0.89, g: 0.31, b: 0.2, a: 1}
+  description: 'Brakkan heavy-vehicle works. Cargo haulers. Badge: two chevrons.'

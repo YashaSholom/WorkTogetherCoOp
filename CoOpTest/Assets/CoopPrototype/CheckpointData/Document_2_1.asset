@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85d633a72bf8604589312d801505b93, type: 3}
+  m_Name: Document_2_1
+  m_EditorClassIdentifier: Assembly-CSharp::CoopPrototype.Checkpoint.DocumentDefinition
+  documentId: visitor-2-1
+  kind: {fileID: 11400000, guid: f32bc7f3d021e71408f927f947d8e3b6, type: 2}
+  traveller: {fileID: 11400000, guid: 8be55dbe3334f2e48bc50604aa754c51, type: 2}
+  expiresOn: 2220-12-31
+  fields:
+  - key: owner
+    label: Owner
+    value: Nima Sol
+  - key: manufacturer
+    label: Manufacturer
+    value: Comet Works
+  - key: model
+    label: Vehicle model
+    value: Comet Hopper
+  - key: registration
+    label: Registration
+    value: LS-209
+  - key: chassis
+    label: Chassis no.
+    value: CW-17733
+  - key: passengers
+    label: Passengers
+    value: None

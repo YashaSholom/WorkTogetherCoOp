@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85d633a72bf8604589312d801505b93, type: 3}
+  m_Name: Document_4_0
+  m_EditorClassIdentifier: Assembly-CSharp::CoopPrototype.Checkpoint.DocumentDefinition
+  documentId: visitor-4-0
+  kind: {fileID: 11400000, guid: 7cdd2ed7a13729a4193f378f771b8141, type: 2}
+  traveller: {fileID: 11400000, guid: ea7191db94fccd34eb55a5e6815af536, type: 2}
+  expiresOn: 2220-12-31
+  fields:
+  - key: name
+    label: Name
+    value: Ossa Rend
+  - key: birth-date
+    label: Date of birth
+    value: 2183-08-17
+  - key: issuer
+    label: Issued by
+    value: Ossari Tide Republic
+  - key: race
+    label: Race
+    value: Brakkan
+  - key: id-number
+    label: ID number
+    value: OTR-2034-OR

@@ -40,7 +40,7 @@ namespace CoopPrototype.Frontend
             Bind("readyButton", ()=> { var member=flow.LocalMember; if(member!=null) member.SetReadyRpc(!member.Ready.Value); });
             Bind("launchButton", ()=>flow.TryStartGame());
             Bind("leaveButton", ()=>flow.Leave());
-            Bind("gameLeave", ()=>flow.Leave());
+            Bind("settingsLeave", ()=>flow.Leave());
             Bind("inviteButton", ()=>
             {
                 if(flow.Session.steam != null && flow.Session.steam.InLobby) { Show("friends"); RefreshFriends(); }
@@ -84,7 +84,7 @@ namespace CoopPrototype.Frontend
         void Update()
         {
             if(root==null || flow==null) return;
-            if(flow.InGame && !flow.Transitioning && UnityEngine.InputSystem.Keyboard.current!=null && UnityEngine.InputSystem.Keyboard.current.escapeKey.wasPressedThisFrame)
+            if(flow.InGame && !flow.Transitioning && !LocalGameplayModal.BlocksInput && UnityEngine.InputSystem.Keyboard.current!=null && UnityEngine.InputSystem.Keyboard.current.escapeKey.wasPressedThisFrame)
             { if(flow.SettingsOpen) CloseSettings(); else Show("settings"); }
             if(flow.Transitioning && flow.SettingsOpen) Show("party");
             if(Time.unscaledTime<nextRefresh) return;
@@ -92,6 +92,7 @@ namespace CoopPrototype.Frontend
             bool gameplay=flow.InGame && !flow.Transitioning;
             root.Q<VisualElement>("menuShell").EnableInClassList("hidden",gameplay && !flow.SettingsOpen);
             root.Q<VisualElement>("gameHud").EnableInClassList("hidden",!gameplay || flow.SettingsOpen);
+            root.Q<Button>("settingsLeave").style.display=flow.InGame ? DisplayStyle.Flex : DisplayStyle.None;
             root.Q<Label>("voiceHud").text=voice.Status+"\n"+voice.SpeakingNames();
             if(flow.SettingsOpen) settings.Refresh();
             if(gameplay) { root.Q<Label>("status").text="Settings apply immediately. The shared game keeps running."; return; }

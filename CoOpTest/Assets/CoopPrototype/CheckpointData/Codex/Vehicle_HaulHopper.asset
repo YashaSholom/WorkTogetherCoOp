@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706614fe32dd185449ccd5d44280f621, type: 3}
+  m_Name: Vehicle_HaulHopper
+  m_EditorClassIdentifier: Assembly-CSharp::CoopPrototype.Checkpoint.VehicleModelDefinition
+  modelName: Haul Hopper
+  manufacturer: {fileID: 11400000, guid: ef2874f2d62a3204a81b447a1e07988c, type: 2}
+  kind: 1
+  picture: {fileID: 2800000, guid: 671b788203a85a04ba7fd33858171ea3, type: 3}
+  description: Flat-bed hover truck for up to four crates. Stops level so cargo can
+    be unloaded.
